@@ -1,0 +1,209 @@
+@charset "UTF-8";
+
+:root{
+    --prime-color: #ff7f50;
+    --font-color: #ffffff;
+    --background-color-of-body: #c7c7c7;
+    --background-color-of-main: #000000d6;
+    --border-color: #ffffff;
+    --hovered-border-color: #ff7f50;
+    --hovered-text-color: #ff7f50;
+    --parallax-background-text: #0000009c;
+    --second-img: url(https://images.unsplash.com/photo-1518949396226-d2cd9ab6889e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80);
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+    max-width: 900px;
+    min-width: 360px;
+    padding: 0 2rem;
+    margin: 1rem auto;
+    border-radius: 6px;
+    
+    color: var(--font-color);
+    background-color: var(--background-color-of-body);
+
+    transition: 0.5s;
+}
+
+
+.parallax{
+    background-image: url();
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: bottom right;
+
+    padding: 0;
+    transition: 0.5s;
+}
+
+
+.box-and-image *{
+    background-color: var(--parallax-background-text);
+    padding: 1rem;
+    border-radius: 6px;
+    width: 50%;
+}
+.box-and-image h1{
+    width: calc(50% + 1.3rem);
+    background-color: var(--parallax-background-text);
+}
+.post{
+    padding: 0.4rem 2rem;
+}
+.post h1 {
+    padding: 0.3rem;
+    border-radius: 6px;
+    outline: 2px solid var(--border-color);
+    transition: 0s;
+    background-color: #00000059;
+}
+.post h1:hover{
+    color: var(--hovered-text-color);
+    border-radius: 6px;
+    outline: 2px solid var(--hovered-border-color);
+}
+aside{
+    margin: 1rem 0;
+}
+
+main, header, footer{
+    background-color: var(--background-color-of-main);
+}
+header, footer{
+    padding: 1.5rem;
+}
+header{
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+footer{
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+.flexbox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header h1{
+    padding: 0.5rem;
+    border-radius: 6px;
+    outline: 2px solid var(--border-color);
+    transition: 0.5s;
+    background-color: #00000059;
+    cursor: pointer;
+}
+header h1:hover{
+    color: var(--hovered-text-color);
+    border-radius: 6px;
+    outline: 2px solid var(--hovered-border-color);
+}
+.navbar a{
+    text-decoration: none;
+    color: #d9d9d9;
+    font-size: larger;
+    font-weight: bolder;
+    padding: 0.4rem;
+    margin: 0;
+    
+    background-color: #00000059;
+    color: var(--font-color);
+    border-radius: 6px;
+    outline: 2px solid var(--border-color);
+    transition: 0.5s;
+}
+.navbar a:hover{
+    background-color: rgba(27, 27, 27, 0.526);
+    color: var(--hovered-text-color);
+    border-radius: 6px;
+    outline: 2px solid var(--hovered-border-color);
+}
+.navbar .icon{
+    display: none;
+}
+footer{
+    text-align: center;
+    font-style: italic;
+    font-weight: bolder;
+    transition: 0.5s;
+}
+footer:hover{
+    color: var(--hovered-text-color);
+}
+
+@media screen and (max-width: 770px){
+    .parallax{
+        background-size: cover;
+        background-position: bottom;
+    }
+}
+@media screen and (max-width: 700px){
+    body{
+        padding: 0;
+        margin: 0;
+    }
+    .navbar .icon{
+        display: inline-block;
+        font-size: 1.5rem;
+        cursor: pointer;
+        outline: 2px solid #00000056;
+    }
+    .navbar a{
+        display: none;
+        transition: linear 0.5s;
+    }
+
+
+    .mobile-nav{
+        text-align: center;
+    }
+    .mobile-nav a{
+        display: block;
+        margin: 0.5rem;
+        outline: 2px solid #00000056;
+    }
+    header{
+        flex-direction: column;
+    }
+
+
+    header, footer{
+        border-radius: initial;
+    }
+}
+@media screen and (max-width: 590px){
+    .parallax{
+        background-position: bottom;
+    }
+    main .box-and-image *{
+        background-color: var(--parallax-background-text);
+        padding: 1rem;
+        border-radius: 6px;
+        width: 70%;
+        transition: 0.5s;
+    }
+    main .box-and-image h1{
+        background-color: var(--parallax-background-text);
+    }
+}
+@media screen and (max-width: 510px){
+    main .box-and-image *{
+        background-color: var(--parallax-background-text);
+        padding: 1rem;
+        border-radius: 6px;
+        width: initial;
+    }
+}
+@media screen and (max-width: 425px){
+    main, body{
+        padding: 0;
+        margin: 0;
+    }
+    header, footer{
+        border-radius: initial;
+    }
+}
